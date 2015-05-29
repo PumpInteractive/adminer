@@ -29,8 +29,13 @@ function page_header($title, $error = "", $breadcrumb = array(), $title2 = "") {
 <?php if ($adminer->head()) { ?>
 <link rel="shortcut icon" type="image/x-icon" href="../adminer/static/favicon.ico">
 <link rel="apple-touch-icon" href="../adminer/static/favicon.ico">
+<?php $db = $_GET['db']; ?>
+<?php if(file_exists($db.".css")) { ?>
+<link rel="stylesheet" type="text/css" href="<?php echo $db;?>.css">
+<?php } else { ?>
 <?php if (file_exists("adminer.css")) { ?>
 <link rel="stylesheet" type="text/css" href="adminer.css">
+<?php } ?>
 <?php } ?>
 <?php } ?>
 
